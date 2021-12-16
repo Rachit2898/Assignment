@@ -15,6 +15,7 @@ import {
 } from "react-bootstrap";
 
 class Property extends React.Component {
+
   constructor(props) {
     super(props);
     UniqueID.enableUniqueIds(this);
@@ -30,7 +31,7 @@ class Property extends React.Component {
       data: [
         {
           id: this.nextUniqueId(),
-          Name: "shivraj",
+          Name: "Rachit",
           Property: "Flat",
           Size: "4bhk",
 
@@ -38,7 +39,7 @@ class Property extends React.Component {
         },
         {
           id: this.nextUniqueId(),
-          Name: "shivraj",
+          Name: "Archit",
           Property: "Plot",
           Size: "4x7",
 
@@ -104,9 +105,45 @@ class Property extends React.Component {
       data: emp,
     });
   }
+  
+    
   render() {
     console.log(this.state.showPropId);
     const { showPropId } = this.state;
+    const mystyle = {
+        color: "white",
+        backgroundColor: "DodgerBlue",
+        padding: "10px",
+        fontFamily: "Arial",
+        height: "800px",
+        width: "800px",
+        margin:"auto"
+      };
+      const form ={
+        height: "300px",
+        width: "600px",
+        margin:"100px 0 auto 100px"
+      };
+      const table ={
+        
+        width: "600px",
+        margin:"100px 0 auto 100px"
+      };
+      const heading ={
+        
+        width: "600px",
+       
+        margin:"auto",
+        marginTop:"100px",
+        fontSize:"50px",
+        paddingLeft:"80px"
+      };
+      const input ={
+        paddingLeft:"10px", width: "300px",height:"20px",fontSize:"20px", marginLeft:"100px",borderRadius:"10px"
+
+      }
+
+    
 
     return (
       <div className="App" style={{ marginTop: "40px", marginBottom: "40px" }}>
@@ -125,7 +162,7 @@ class Property extends React.Component {
                   this.state.data[showPropId].Property}
               </Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body style={table}>
               <Table striped bordered hover>
                 <thead>
                   <tr>
@@ -151,7 +188,7 @@ class Property extends React.Component {
         ) : (
           ""
         )}
-        <Container >
+        <Container style={mystyle} >
           <Row>
             <Col lg={{ span: "8", offset: "2" }}>
               <PropertyList
@@ -161,12 +198,12 @@ class Property extends React.Component {
               />
             </Col>
             <Col style={{width: "400px",height: "600px"}} lg={{ span: "8", offset: "2" }}>
-              <h3>Add Property</h3>
+              <h3 style={heading}>Add Property</h3>
               <br />
-              <Form style={{width: "300px",height: "300px",border: "1px solid black"}} onSubmit={this.handleSubmit}>
+              <Form style={form} onSubmit={this.handleSubmit}>
                 <Form.Group style={{width: "100px", marginTop:"10px"}}>
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control style={{width: "200px", marginLeft:"50px"}}
+                  <Form.Label style={{marginLeft:"100px"}}>Name</Form.Label>
+                  <Form.Control style={input}
                     value={this.state.Name}
                     type="text"
                     name="Name"
@@ -175,8 +212,8 @@ class Property extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group style={{width: "100px", marginTop:"10px"}} >
-                  <Form.Label>Property</Form.Label>
-                  <Form.Control style={{width: "200px", marginLeft:"50px"}}
+                  <Form.Label style={{marginLeft:"100px"}}>Property</Form.Label>
+                  <Form.Control style={input}
                     type="text"
                     placeholder="Property Type"
                     name="Property"
@@ -185,8 +222,8 @@ class Property extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group style={{width: "100px", marginTop:"10px"}} >
-                  <Form.Label>Size</Form.Label>
-                  <Form.Control style={{width: "200px", marginLeft:"50px"}}
+                  <Form.Label style={{marginLeft:"100px"}}>Size</Form.Label>
+                  <Form.Control style={input}
                     value={this.state.Size}
                     type="text"
                     name="Size"
@@ -196,8 +233,8 @@ class Property extends React.Component {
                 </Form.Group>
 
                 <Form.Group style={{width: "100px", marginTop:"10px"}} >
-                  <Form.Label>Description</Form.Label>
-                  <Form.Control style={{width: "200px", marginLeft:"50px"}}
+                  <Form.Label style={{marginLeft:"100px"}}>Description</Form.Label>
+                  <Form.Control style={input}
                     type="text"
                     placeholder="About Property"
                     name="Description"
@@ -205,7 +242,7 @@ class Property extends React.Component {
                     onChange={this.HandleEvents}
                   />
                 </Form.Group>
-                <Button style={{width: "100px", marginTop:"10px"}} type="submit">Add Property</Button>
+                <Button style={{width: "200px", marginTop:"10px",fontSize:"20px",marginRight:"100px",height:"30px",borderRadius:"10px"}} type="submit">Add Property</Button>
               </Form>
             </Col>
           </Row>

@@ -10,20 +10,20 @@ export default function propertyList (props){
   {props.propertyData.length ? (
     
 
-    <Table className ="table" >
-    <thead>
-      <tr>
-        <th> Name</th>
-        <th>Property </th>
-        <th>Size</th>
+    <Table style={{marginTop:"50px",marginLeft:"200px"}} >
+    <thead style={{marginTop:"50px",marginLeft:"200px"}}>
+      <tr >
+        <th style={{marginTop:"50px",marginLeft:"200px",padding:"10px"}} > Name</th>
+        <th style={{marginTop:"50px",marginLeft:"200px",padding:"10px"}}>Property </th>
+        <th  style={{marginTop:"50px",marginLeft:"200px",padding:"10px"}}>Size</th>
         
-        <th>Description</th>
-        <th>Action</th>
+        <th style={{marginTop:"50px",marginLeft:"200px",padding:"10px"}} >Description</th>
+        <th style={{marginTop:"50px",marginLeft:"200px",padding:"10px"}}>Action</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody style={{marginTop:"50px",marginLeft:"200px"}}>
       {props.propertyData.map((property, i) => (
-        <tr key={i}>
+        <tr key={i} style={{marginRight:"30px"}}>
           <td>{property.Name}</td>
           <td>{property.Property}</td>
           <td>{property.Size}</td>
@@ -40,7 +40,7 @@ export default function propertyList (props){
     </tbody>
   </Table>)
   :(
-    <div> no data</div>
+    <div style={{marginTop:"50px",height:"50px",fontSize:"30px",color:"red"}}> No Data Available</div>
   )
 }
   
